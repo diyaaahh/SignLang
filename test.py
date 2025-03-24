@@ -58,6 +58,8 @@ while True:
 
         prediction, index = classifier.getPrediction(imgWhite)
         print(prediction, index)
+        with open("detected_letter.txt", "w") as file:
+            file.write(labels[index])
         cv2.putText(img, labels[index], (x1, y1 - 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
     cv2.imshow("Image", img)
     
